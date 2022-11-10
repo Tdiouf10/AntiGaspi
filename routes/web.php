@@ -14,11 +14,15 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/annonce', 'App\Http\Controllers\AnnonceController@create')->name('annonce.create');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/apropos', function () {
+    return view('apropos');
+});

@@ -1,0 +1,18 @@
+body {
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif; !important;
+}
+h3 {
+    text-decoration: underline blink #b1dfbb !important;
+    color: #159330;
+}
+p {
+    text-align: justify;
+}
+.image-fond {
+    width: 100%;
+    opacity: 0.9;
+}
+.image {
+    width: 400px;
+    border-radius: 25px;
+}
