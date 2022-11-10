@@ -16,9 +16,10 @@ use App\Http\Controllers;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/annonce', 'App\Http\Controllers\AnnonceController@create')->name('annonce.create');
+Route::post('/annonce/create', 'App\Http\Controllers\AnnonceController@store')->name('annonce.store');
