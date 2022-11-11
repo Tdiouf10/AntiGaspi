@@ -5,7 +5,7 @@
         <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm">
             @csrf
             <div class="w-100 d-flex justify-content-center align-items-center">
-                <div class="form-outline">
+                <div class="form-outline pe-1">
                     <input type="search" class="form-control" id="words">
                 </div>
                 <button type="submit" class="btn btn-primary">Rechercher
@@ -13,10 +13,10 @@
             </div>
         </form>
         <div id="results">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach($annonces as $annonce)
                     <div class="col py-4">
-                        <div class="card">
+                        <div class="card h-100 shadow-sm">
                             <img class="card-img-top" src="{{URL::asset('/img/test.png')}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $annonce->title }}</h5>
