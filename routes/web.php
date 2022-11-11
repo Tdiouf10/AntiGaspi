@@ -25,4 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/annonces', 'App\Http\Controllers\AnnonceController@index')->name('annonce.index');
 Route::get('/annonce', 'App\Http\Controllers\AnnonceController@create')->name('annonce.create');
 Route::post('/annonce/create', 'App\Http\Controllers\AnnonceController@store')->name('annonce.store');
-Route::post('/search', 'App\Http\Controllers\AnnonceController@seach')->name('annonce.search');
+Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
