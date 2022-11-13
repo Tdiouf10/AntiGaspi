@@ -66,7 +66,10 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Déconnexion') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('user.edit-profil') }}">
+                                    {{ __('Profile') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -81,9 +84,41 @@
     </nav>
 
     <main class="py-4">
-        @yield('content')
+        @auth
+            <div class="container">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href=""> Annonces</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('categories.index') }}"> Catégories</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-8">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
+        @else
+            @yield('content')
+        @endauth
     </main>
 </div>
 @yield('extra-js')
+@yield('scripts')
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,28 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function editProfile()
+    {
+        return view('editProfile')->with('user', \auth()->user());
+    }
+
+    public function updateProfile(UpdateProfileRequest $request)
+    {
+
+        $user = Auth::user();
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'firstname' => $request->firstname,
+            'address' => $request->address,
+            'code_postal' => $request->code_postal
+        ]);
+
+
+        return back()->with('success', 'Votre profil est mis à jour');
+
     }
 }

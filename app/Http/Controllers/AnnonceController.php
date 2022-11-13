@@ -36,12 +36,12 @@ class AnnonceController extends Controller
 
         if (!Auth::check()) {
             $request->validate([
-                'name' => ['required', 'unique:users'],
+                'name' => ['required'],
                 'email' => ['required', 'email', 'unique:users'],
                 'password' => ['required', 'confirmed'],
-//                'username' => ['required'],
-//                'address' => ['required'],
-//                'code_postal' => ['required'],
+                'firstname' => ['required'],
+                'address' => ['required'],
+                'code_postal' => ['required'],
                 'password_confirmation' => ['required']
             ]);
 
