@@ -16,9 +16,17 @@ use App\Http\Controllers;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/annonce', 'App\Http\Controllers\AnnonceController@create')->name('annonce.create');
+
+Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
+Route::get('/profile', 'App\Http\Controllers\HomeController@editProfile')->name('user.edit-profil');
+Route::put('/profile', 'App\Http\Controllers\HomeController@updateProfile')->name('user.update-profil');
+
+Auth::routes();
+
+Route::resource('categories', 'App\Http\Controllers\CategoriesController');
+Route::resource('annonces', 'App\Http\Controllers\AnnonceController');
