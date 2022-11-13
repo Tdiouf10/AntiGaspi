@@ -32,11 +32,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                    @auth
+                        <li>
+                            <a href="{{ route('annonces.create') }}" class="nav-link"> Ajouter une nouvelle annonce</a>
+                        </li>
+                    @endauth
                     <li>
-                        <a href="{{ route('annonce.create') }}" class="nav-link"> Ajouter une nouvelle annonce</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('annonce.index') }}" class="nav-link">Voir les annonces</a>
+                        <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
                     </li>
                 </ul>
 
@@ -95,7 +97,7 @@
                     <div class="col-md-4">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href=""> Annonces</a>
+                                <a href="{{ route('annonces.index') }}"> Annonces</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('categories.index') }}"> Catégories</a>

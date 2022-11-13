@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AnnonceStore;
+use App\Http\Requests\CreateAnnoncesRequest;
 use App\Models\Annonce;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -19,49 +20,33 @@ class AnnonceController extends Controller
 
     public function index()
     {
-        $annonces = DB::table('annonces')->orderBy('created_at', 'DESC')->paginate(18);
-
-        return view('annonces', compact('annonces'));
+        return view('annonces.index')->with('annonces', Annonce::all());
     }
 
     public function create()
     {
-        return view('create');
+        return view('annonces.create');
     }
 
-    public function store(AnnonceStore $request)
+    public function store(CreateAnnoncesRequest $request)
     {
-        $validated = $request->validated();
+        // enregistrer image
 
+        $image = $request->image->store('annonces');
 
-        if (!Auth::check()) {
-            $request->validate([
-                'name' => ['required'],
-                'email' => ['required', 'email', 'unique:users'],
-                'password' => ['required', 'confirmed'],
-                'firstname' => ['required'],
-                'address' => ['required'],
-                'code_postal' => ['required'],
-                'password_confirmation' => ['required']
-            ]);
+        // Creer une annonce
 
-            $user = User::create([
-                'name' => $request['name'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password'])
-            ]);
+        Annonce::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $image,
+            'price' => $request->price,
+            'localisation' => $request->localisation,
+            'code_postal' => $request->code_postal,
+            'user_id' => \auth()->user()->id,
+        ]);
 
-            $this->guard()->login($user);
-
-
-        }
-        $annonce = new Annonce();
-        $annonce->title = $validated['title'];
-        $annonce->description = $validated['description'];
-        $annonce->price = $validated['price'];
-        $annonce->localisation = $validated['localisation'];
-        $annonce->user_id = auth()->user()->id;
-        $annonce->save();
+        session()->flash('success', 'Success');
 
         return redirect()->route('welcome')->with('success', 'Message pour annonce déposer');
     }

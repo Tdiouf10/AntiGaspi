@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('localisation');
+            $table->integer('code_postal');
             $table->string('image');
             $table->float('price');
             $table->integer('user_id')->unsigned();
