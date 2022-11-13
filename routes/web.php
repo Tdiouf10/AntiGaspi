@@ -28,7 +28,5 @@ Route::put('/profile', 'App\Http\Controllers\HomeController@updateProfile')->nam
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('categories', 'App\Http\Controllers\CategoriesController');
 Route::resource('annonces', 'App\Http\Controllers\AnnonceController');

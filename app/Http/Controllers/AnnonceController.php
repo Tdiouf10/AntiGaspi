@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AnnonceStore;
 use App\Http\Requests\CreateAnnoncesRequest;
 use App\Models\Annonce;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Validator;
 
 class AnnonceController extends Controller
 {
@@ -25,11 +26,38 @@ class AnnonceController extends Controller
 
     public function create()
     {
-        return view('annonces.create');
+        $categories = Category::all();
+        return view('annonces.create', compact('categories'));
     }
 
     public function store(CreateAnnoncesRequest $request)
     {
+//
+//        if (!Auth::check()) {
+//            $request->validate([
+//                'name' => ['required'],
+//                'email' => ['required', 'email', 'unique:users'],
+//                'password' => ['required', 'confirmed'],
+//                'firstname' => ['required'],
+//                'address' => ['required'],
+//                'code_postal' => ['required'],
+//                'password_confirmation' => ['required'],
+//                'telephone' => ['required'],
+//            ]);
+//
+//            $user = User::create([
+//                'name' => $request['name'],
+//                'email' => $request['email'],
+//                'password' => Hash::make($request['password']),
+//                'firstname' => $request['firstname'],
+//                'address' => $request['address'],
+//                'code_postal' => $request['code_postal'],
+//                'telephone' => $request['telephone'],
+//            ]);
+//
+//            $this->guard()->login($user);
+//        }
+
         // enregistrer image
 
         $image = $request->image->store('annonces');
@@ -43,7 +71,8 @@ class AnnonceController extends Controller
             'price' => $request->price,
             'localisation' => $request->localisation,
             'code_postal' => $request->code_postal,
-            'user_id' => \auth()->user()->id,
+            'user_id' => auth()->user()->id,
+            'category_id' => $request->category_id,
         ]);
 
         session()->flash('success', 'Success');

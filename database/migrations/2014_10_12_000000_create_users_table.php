@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('address');
             $table->integer('code_postal');
             $table->bigInteger('telephone')->nullable();
+            $table->boolean('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

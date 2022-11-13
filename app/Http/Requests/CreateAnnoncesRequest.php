@@ -29,7 +29,8 @@ class CreateAnnoncesRequest extends FormRequest
             'localisation' => ['required'],
             'code_postal' => ['required', 'integer'],
             'image' => ['required', 'image'],
-            'price' => ['integer', 'required'],
+            'price' => ['required'],
+            'category_id' => ['required', 'exists:App\Models\Category,id']
         ];
     }
 }
