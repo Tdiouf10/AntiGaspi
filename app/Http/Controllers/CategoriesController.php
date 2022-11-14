@@ -67,9 +67,7 @@ class CategoriesController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update([
-            'name' => $request->name
-        ]);
+        $category->name = $request->name;
 
         $category->save();
 

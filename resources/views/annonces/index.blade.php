@@ -2,16 +2,23 @@
 
 @section('content')
     <div class="container">
-        <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm">
-            @csrf
-            <div class="w-100 d-flex justify-content-center align-items-center">
-                <div class="form-outline pe-1">
-                    <input type="search" class="form-control" id="words">
-                </div>
-                <button type="submit" class="btn btn-primary">Rechercher
-                </button>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <a href="{{ route('annonces.create') }}" class="btn btn-primary"> Creer une annonce</a>
             </div>
-        </form>
+            <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
+                  class="">
+                @csrf
+                <div class="w-100 d-flex justify-content-center align-items-center">
+                    <div class="form-outline pe-1">
+                        <input type="search" class="form-control" id="words">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Rechercher
+                    </button>
+                </div>
+            </form>
+        </div>
         <div id="results">
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach($annonces as $annonce)
