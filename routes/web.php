@@ -21,13 +21,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
 
 Auth::routes();
 
-Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index']);
+Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index', 'create']);
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -38,6 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
 //
 Route::group(['middleware' => 'admin'], function () {
     Route::resource('categories', 'App\Http\Controllers\CategoriesController')->only(['create', 'store', 'show', 'edit', 'update', 'destroy']);
-    Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['create', 'store', 'show', 'edit', 'update', 'destroy']);
+    Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['store', 'show', 'edit', 'update', 'destroy']);
 
 });

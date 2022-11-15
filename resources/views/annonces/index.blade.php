@@ -3,9 +3,6 @@
 @section('content')
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <a href="{{ route('annonces.create') }}" class="btn btn-primary"> Creer une annonce</a>
-            </div>
             <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
                   class="">
                 @csrf
