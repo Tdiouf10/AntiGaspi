@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
+    <div class="card">
         <div class="card-img-top">
             <img src="{{ URL('storage/img/fond_create.jpeg') }}" class="image-fond" alt=""/>
         </div>

@@ -30,13 +30,13 @@
                     <ul class="navbar-nav">
                         @auth
                             <li>
-                                <a href="{{ route('annonces.create') }}" class="nav-link hover-underline-animation">Creer une annonce</a>
+                                <a href="{{ route('annonces.create') }}" class="nav-link hover-underline-animation">Déposer une annonce</a>
                             </li>
                             <li>
                                 <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Rechercher</a>
                             </li>
                             <li>
-                                <a href="{{ route('categories.index') }}" class="nav-link hover-underline-animation">Créer une catégorie</a>
+                                <a href="{{ route('categories.index') }}" class="nav-link hover-underline-animation">Ajouter une catégorie</a>
                             </li>
                         @endauth
                         <li>
