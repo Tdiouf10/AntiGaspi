@@ -38,6 +38,11 @@
                                     Rechercher
                                 </a>
                             </li>
+                            <li>
+                                <a class="nav-link" href="{{ route("categories.index") }}">
+                                    Créer une catégorie
+                                </a>
+                            </li>
                         @endauth
                         <li>
                             <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
@@ -118,15 +123,9 @@
                         {{ session()->get('success') }}
                     </div>
                 @endif
-                <div class="d-flex justify-content-between flex-column">
-                    <div>
-                        @yield('content')
-                    </div>
-                </div>
             </div>
-        @else
-            @yield('content')
         @endauth
+        @yield('content')
     </main>
     @include('footer')
 </div>
