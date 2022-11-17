@@ -6,20 +6,19 @@
             <img src="{{ URL('storage/img/fond_create.jpeg') }}" class="image-fond" alt=""/>
         </div>
         <div class="card-img-overlay">
-            <div class="container p-5">
+            <div class="container mt-5">
                 @if(\Illuminate\Support\Facades\Auth::user()->is_admin === 1)
                 <div class="d-flex justify-content-end mb-2">
                     <a href="{{ route('categories.create') }}" class="btn btn-success text-white">Ajouter une catégorie</a>
                 </div>
                 @endif
-
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     @foreach($categories as $category)
                         <div class="col">
                             <div class="card h-100 shadow-sm p-2">
                                 <img class="card-img-top" src="{{URL::asset('/img/test.png')}}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $category->name }}</h5>
+                                    <h5 class="card-title text-center">{{ $category->name }}</h5>
                                 </div>
                                 @if(\Illuminate\Support\Facades\Auth::user()->is_admin === 1)
                                 <div class="row">
@@ -45,7 +44,7 @@
                                     <div class="h-100 shadow-sm p-2">
                                         <img class="card-img-top" src="{{URL::asset('/img/test.png')}}" alt="Card image cap">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $category->name }}</h5>
+                                            <h5 class="card-title text-center">{{ $category->name }}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -57,9 +56,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div></div></div>
 @endsection
 
 
