@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('annonces', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('localisation');
-            $table->integer('code_postal');
-            $table->string('image');
-            $table->float('price');
-            $table->timestamps();
+        Schema::table('annonces', function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained();
         });
     }
 
@@ -32,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('annonces');
+        Schema::table('annonces', function (Blueprint $table) {
+            $table->dropColumn('category_id');
+        });
     }
 };
