@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/apropos', function () {
     return view('apropos');
+});
 
 Route::get('/', function () {
     return view('welcome')->with('annonces', Annonce::all());
