@@ -18,7 +18,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('localisation');
+            $table->integer('code_postal');
+            $table->string('image');
             $table->float('price');
+            $table->integer('user_id')->unsigned();
+            $table->foreignId('category_id')->constrained();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
