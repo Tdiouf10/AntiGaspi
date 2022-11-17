@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="d-flex justify-content-between flex-column">
             <div class="container mb-4">
@@ -13,9 +12,7 @@
                                 <a href="{{ route('categories.index') }}"> Catégories</a>
                             </div>
                             <div class="">
-                                <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)"
-                                      id="searchForm"
-                                      class="">
+                                <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm" class="">
                                     @csrf
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="form-outline pe-1">

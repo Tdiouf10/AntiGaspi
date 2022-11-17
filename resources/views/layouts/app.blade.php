@@ -14,38 +14,33 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js','@fortawesome/fontawesome-free/js/all.js'])
+
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+
 </head>
 <body>
 
 <div id="app">
     <div class="col-md-12">
         <nav class="navbar navbar-expand-md shadow-sm border rounded-0" style="background-color: #b1dfbb">
-            <div class="container justify-content-between">
-                <div class="menu-wrapper d-flex justify-content-between w-auto">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Anti-Gaspi
-                    </a>
+            <div class="container mx-5 justify-content-between" style="max-width: 100%;">
+                <div class="menu-wrapper d-flex justify-content-center">
+                    <a class="navbar-brand hover-underline-animation" href="{{ url('/') }}">AntiGaspi</a>
                     <ul class="navbar-nav">
                         @auth
                             <li>
-                                <a href="{{ route('annonces.create') }}" class="nav-link">
-                                    Creer une annonce
-                                </a>
+                                <a href="{{ route('annonces.create') }}" class="nav-link hover-underline-animation">Creer une annonce</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route("annonces.index") }}">
-                                    Rechercher
-                                </a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Rechercher</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route("categories.index") }}">
-                                    Créer une catégorie
-                                </a>
+                                <a href="{{ route('categories.index') }}" class="nav-link hover-underline-animation">Créer une catégorie</a>
                             </li>
                         @endauth
                         <li>
-                            <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
+                            <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Voir les annonces</a>
                         </li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -56,31 +51,19 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex " id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        {{--                    <ul class="navbar-nav mr-auto">--}}
-                        {{--                        @auth--}}
-                        {{--                            <li>--}}
-                        {{--                                <a href="{{ route('annonces.create') }}" class="nav-link"> Ajouter une nouvelle annonce</a>--}}
-                        {{--                            </li>--}}
-                        {{--                        @endauth--}}
-                        {{--                        <li>--}}
-                        {{--                            <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>--}}
-                        {{--                        </li>--}}
-                        {{--                    </ul>--}}
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                        <a class="nav-link hover-underline-animation" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
 
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                        <a class="nav-link hover-underline-animation" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -117,7 +100,7 @@
     </div>
     <main>
         @auth
-            <div class="container">
+            <div class="container" style="max-height: 100%;">
                 @if(session()->has('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
