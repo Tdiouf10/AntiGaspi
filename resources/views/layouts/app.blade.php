@@ -25,7 +25,7 @@
                         </a>
                     @endguest
                     @auth
-                            <a class="navbar-brand" href="{{ route('home.index')  }}">
+                            <a class="navbar-brand" href="{{ route('welcome')  }}">
                                 Anti-Gaspi
                             </a>
                     @endguest

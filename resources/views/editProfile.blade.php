@@ -96,7 +96,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <div>
-                            <a href="{{ route('home.index') }}" class="btn btn-primary"> Retour </a>
+                            <a href="{{ route('welcome') }}" class="btn btn-primary"> Retour </a>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-success">
