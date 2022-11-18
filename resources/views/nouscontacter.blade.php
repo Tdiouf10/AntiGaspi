@@ -50,7 +50,7 @@
                             <a href="https://github.com/Tdiouf10"><img src="{{ URL('storage/img/logo/github.png') }}" class="logo" alt="Logo Github"/></a>
                         </div>
                         <div class="col">
-                            <a href="mailto:oswald.perrinedu40@gmail.com"><img src="{{ URL('storage/img/logo/email.png') }}" class="logo" alt="Logo Email"/></a>
+                            <a href="mailto:theodoremdiouf98@gmail.com"><img src="{{ URL('storage/img/logo/email.png') }}" class="logo" alt="Logo Email"/></a>
                         </div>
                     </div>
                 </div>
