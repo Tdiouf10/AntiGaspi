@@ -23,9 +23,16 @@
         <nav class="navbar navbar-expand-md shadow-sm border rounded-0" style="background-color: #b1dfbb">
             <div class="container justify-content-between">
                 <div class="menu-wrapper d-flex justify-content-between w-auto">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Anti-Gaspi
-                    </a>
+                    @guest
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            Anti-Gaspi
+                        </a>
+                    @endguest
+                    @auth
+                            <a class="navbar-brand" href="{{ route('home.index')  }}">
+                                Anti-Gaspi
+                            </a>
+                    @endguest
                     <ul class="navbar-nav">
                         @auth
                             <li>
