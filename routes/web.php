@@ -21,11 +21,15 @@ Route::get('/apropos', function () {
     return view('apropos');
 });
 
+Route::get('/nouscontacter', function () {
+    return view('nouscontacter');
+});
+
 Route::get('/', function () {
     return view('welcome')->with('annonces', Annonce::all());
 })->name('welcome');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
 

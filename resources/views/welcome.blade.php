@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-img-top">
-            <img src="{{ URL('storage/img/fond_accueilV2.jpeg') }}" class="image-fond" alt=""/>
-        </div>
-        <div class="card-img-overlay h-100 text-center d-flex align-items-center justify-content-center">
-            <h1><label class="display-2">Bienvenue sur<br>AntiGaspi</label><br><br>Votre site de troc alimentaire anti-gaspi !</h1>
-        </div>
+<div class="card">
+    <div class="card-img-top">
+        <img src="{{ URL('storage/img/fond_accueil.jpeg') }}" class="image-fond" alt=""/>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="card-img-overlay text-center d-flex align-items-center justify-content-center">
+        <h1><div class="display-1">Bienvenue sur<br>AntiGaspi</div><br><br>Votre site de troc alimentaire anti-gaspi !</h1>
+    </div>
+    @if(count($annonces) >= 1)
+    <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach($annonces as $annonce)
             <div class="col">
                 <div class="card h-100">
@@ -25,5 +25,8 @@
                 </div>
             </div>
         @endforeach
+        </div>
     </div>
+    @endif
+</div>
 @endsection

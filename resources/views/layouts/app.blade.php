@@ -3,21 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js','@fortawesome/fontawesome-free/js/all.js'])
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
-
 <div id="app">
     <div class="col-md-12">
         <nav class="navbar navbar-expand-md shadow-sm border rounded-0" style="background-color: #b1dfbb">
@@ -36,14 +32,10 @@
                     <ul class="navbar-nav">
                         @auth
                             <li>
-                                <a href="{{ route('annonces.create') }}" class="nav-link">
-                                    Creer une annonce
-                                </a>
+                                <a href="{{ route('annonces.create') }}" class="nav-link hover-underline-animation">Déposer une annonce</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route("annonces.index") }}">
-                                    Rechercher
-                                </a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Rechercher</a>
                             </li>
                             <li>
                                 <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
@@ -72,13 +64,12 @@
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                        <a class="nav-link hover-underline-animation" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
-
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                        <a class="nav-link hover-underline-animation" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -86,10 +77,7 @@
                                     <a class="nav-link" href="">{{ __('Messages') }}</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -116,7 +104,7 @@
     </div>
     <main>
         @auth
-            <div class="container">
+            <div class="container" style="max-height: 100%;">
                 @if(session()->has('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}

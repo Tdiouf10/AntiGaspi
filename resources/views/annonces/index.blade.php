@@ -1,14 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
-                  class="">
-                @csrf
-                <div class="w-100 d-flex justify-content-center align-items-center">
-                    <div class="form-outline pe-1">
-                        <input type="search" class="form-control" id="words">
+<div class="card">
+    <div class="card-img-top">
+        <img src="{{ URL('storage/img/fond.jpeg') }}" class="image-fond" alt=""/>
+    </div>
+    <div class="card-img-overlay">
+        <div class="container mt-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
+                      class="">
+                    @csrf
+                    <div class="w-100 d-flex justify-content-center align-items-center">
+                        <div class="form-outline pe-1">
+                            <input type="search" class="form-control" id="words">
+                        </div>
+                        <button type="submit" class="btn btn-success">Rechercher</button>
                     </div>
                     <button type="submit" class="btn btn-primary">
                         Rechercher
@@ -41,6 +48,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('extra-js')

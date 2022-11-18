@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with('annonces', Annonce::all());
+        return view('welcome')->with('annonces', Annonce::all());
     }
 
     public function editProfile()
