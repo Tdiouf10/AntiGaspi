@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js','@fortawesome/fontawesome-free/js/all.js'])
-
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
-
 </head>
 <body>
-
 <div id="app">
     <div class="col-md-12">
         <nav class="navbar navbar-expand-md shadow-sm border rounded-0" style="background-color: #b1dfbb">
@@ -60,7 +53,6 @@
                                         <a class="nav-link hover-underline-animation" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
-
                                 @if (Route::has('register'))
                                     <li class="nav-item">
                                         <a class="nav-link hover-underline-animation" href="{{ route('register') }}">{{ __('Inscription') }}</a>
@@ -71,23 +63,11 @@
                                     <a class="nav-link" href="">{{ __('Messages') }}</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                            {{ __('Déconnexion') }}
-                                        </a>
-                                        <a class="dropdown-item" href="{{ route('user.edit-profil') }}">
-                                            {{ __('Profile') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Déconnexion') }}</a>
+                                        <a class="dropdown-item" href="{{ route('user.edit-profil') }}">{{ __('Profile') }}</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
                                     </div>
                                 </li>
                             @endguest

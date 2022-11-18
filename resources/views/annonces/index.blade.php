@@ -1,42 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
-                  class="">
-                @csrf
-                <div class="w-100 d-flex justify-content-center align-items-center">
-                    <div class="form-outline pe-1">
-                        <input type="search" class="form-control" id="words">
+<div class="card">
+    <div class="card-img-top">
+        <img src="{{ URL('storage/img/fond.jpeg') }}" class="image-fond" alt=""/>
+    </div>
+    <div class="card-img-overlay">
+        <div class="container mt-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm"
+                      class="">
+                    @csrf
+                    <div class="w-100 d-flex justify-content-center align-items-center">
+                        <div class="form-outline pe-1">
+                            <input type="search" class="form-control" id="words">
+                        </div>
+                        <button type="submit" class="btn btn-success">Rechercher</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        Rechercher
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div id="results">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                @foreach($annonces as $annonce)
-                    <div class="col py-4">
-                        <div class="card h-100 shadow-sm">
-                            <img class="card-img-top" src="{{ asset($annonce->image)}}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $annonce->title }}</h5>
-                                <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
-                                <p class="card-text text-info"> {{ $annonce->localisation }}</p>
-                                <p class="card-text"> {{ $annonce->description }}</p>
-                                <a href="" class="btn btn-success">Voir l'annonce</a>
-                                <a href="" class="btn btn-primary">Modifier l'annonce</a>
-                                <a href="" class="btn btn-danger">Supprimer l'annonce</a>
+                </form>
+            </div>
+            <div id="results">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    @foreach($annonces as $annonce)
+                        <div class="col py-4">
+                            <div class="card h-100 shadow-sm">
+                                <img class="card-img-top" src="{{ asset($annonce->image)}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $annonce->title }}</h5>
+                                    <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
+                                    <p class="card-text text-info"> {{ $annonce->localisation }}</p>
+                                    <p class="card-text"> {{ $annonce->description }}</p>
+                                    <a href="" class="btn btn-success">Voir l'annonce</a>
+                                    <a href="" class="btn btn-primary">Modifier l'annonce</a>
+                                    <a href="" class="btn btn-danger">Supprimer l'annonce</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('extra-js')
