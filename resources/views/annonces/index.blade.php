@@ -17,11 +17,16 @@
                         </div>
                         <button type="submit" class="btn btn-success">Rechercher</button>
                     </div>
-                </form>
-            </div>
-            <div id="results">
-                <div class="row row-cols-1 row-cols-md-4 g-4">
-                    @foreach($annonces as $annonce)
+                    <button type="submit" class="btn btn-primary">
+                        Rechercher
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="results">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @foreach($annonces as $annonce)
+                    @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)
                         <div class="col py-4">
                             <div class="card h-100 shadow-sm">
                                 <img class="card-img-top" src="{{ asset($annonce->image)}}">
@@ -31,13 +36,15 @@
                                     <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                     <p class="card-text"> {{ $annonce->description }}</p>
                                     <a href="" class="btn btn-success">Voir l'annonce</a>
-                                    <a href="" class="btn btn-primary">Modifier l'annonce</a>
-                                    <a href="" class="btn btn-danger">Supprimer l'annonce</a>
+                                    {{--                                @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)--}}
+                                    {{--                                    <a href="" class="btn btn-primary">Modifier l'annonce</a>--}}
+                                    {{--                                    <a href="" class="btn btn-danger">Supprimer l'annonce</a>--}}
+                                    {{--                                @endif--}}
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>

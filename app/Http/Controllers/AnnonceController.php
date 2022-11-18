@@ -77,7 +77,7 @@ class AnnonceController extends Controller
 
         session()->flash('success', 'Success');
 
-        return redirect()->route('welcome')->with('success', 'Message pour annonce déposer');
+        return redirect()->route('annonces.index')->with('success', 'Message pour annonce déposer');
     }
 
     public function search(Request $request)
@@ -91,4 +91,13 @@ class AnnonceController extends Controller
 
         return response()->json(['success' => true, 'annonces' => $annonces]);
     }
+
+//    public function getAnnonces($annonce_id)
+//    {
+//        $annonces = Annonce::where('id', $annonce_id)->first();
+//        if (Auth::user() !== $annonce_id->user_id)
+//        {
+//
+//        }
+//    }
 }

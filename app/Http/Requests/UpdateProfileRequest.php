@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Couchbase\Role;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class UpdateProfileRequest extends FormRequest
 {
@@ -25,7 +28,7 @@ class UpdateProfileRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'email' => ['required', 'email', 'unique:users'],
+            'email' => ['required', 'email', Rule::unique('users')->ignore(Auth::user()->id)],
             'firstname' => ['required'],
             'address' => ['required'],
             'code_postal' => ['required'],
