@@ -17,9 +17,18 @@
 <div id="app">
     <div class="col-md-12">
         <nav class="navbar navbar-expand-md shadow-sm border rounded-0" style="background-color: #b1dfbb">
-            <div class="container mx-5 justify-content-between" style="max-width: 100%;">
-                <div class="menu-wrapper d-flex justify-content-center">
-                    <a class="navbar-brand hover-underline-animation" href="{{ url('/') }}">AntiGaspi</a>
+            <div class="container justify-content-between">
+                <div class="menu-wrapper d-flex justify-content-between w-auto">
+                    @guest
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            Anti-Gaspi
+                        </a>
+                    @endguest
+                    @auth
+                            <a class="navbar-brand" href="{{ route('welcome')  }}">
+                                Anti-Gaspi
+                            </a>
+                    @endguest
                     <ul class="navbar-nav">
                         @auth
                             <li>
@@ -29,13 +38,18 @@
                                 <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Rechercher</a>
                             </li>
                             <li>
-                                <a href="{{ route('categories.index') }}" class="nav-link hover-underline-animation">Ajouter une catégorie</a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
                             </li>
+                            @if(auth()->user()->is_admin === 1)
+                                <li>
+                                    <a class="nav-link" href="{{ route("categories.create") }}">
+                                        Créer une catégorie
+                                    </a>
+                                </li>
+                            @endif
                         @endauth
-                        <li>
-                            <a href="{{ route('annonces.index') }}" class="nav-link hover-underline-animation">Voir les annonces</a>
-                        </li>
                     </ul>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -65,9 +79,19 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Déconnexion') }}</a>
-                                        <a class="dropdown-item" href="{{ route('user.edit-profil') }}">{{ __('Profile') }}</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                            {{ __('Déconnexion') }}
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('user.edit-profil') }}">
+                                            {{ __('Profile') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              class="d-none">
+                                            @csrf
+                                        </form>
                                     </div>
                                 </li>
                             @endguest

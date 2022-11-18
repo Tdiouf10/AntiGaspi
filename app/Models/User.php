@@ -49,6 +49,6 @@ class User extends Authenticatable
 
     public function annonces()
     {
-        return $this->hasMany('App\Annonce');
+        return $this->hasMany(Annonce::class);
     }
 }
