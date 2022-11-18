@@ -39,15 +39,18 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route("categories.index") }}">
-                                    Créer une catégorie
-                                </a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
                             </li>
+                            @if(auth()->user()->is_admin === 1)
+                                <li>
+                                    <a class="nav-link" href="{{ route("categories.create") }}">
+                                        Créer une catégorie
+                                    </a>
+                                </li>
+                            @endif
                         @endauth
-                        <li>
-                            <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
-                        </li>
                     </ul>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -56,18 +59,6 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex " id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        {{--                    <ul class="navbar-nav mr-auto">--}}
-                        {{--                        @auth--}}
-                        {{--                            <li>--}}
-                        {{--                                <a href="{{ route('annonces.create') }}" class="nav-link"> Ajouter une nouvelle annonce</a>--}}
-                        {{--                            </li>--}}
-                        {{--                        @endauth--}}
-                        {{--                        <li>--}}
-                        {{--                            <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>--}}
-                        {{--                        </li>--}}
-                        {{--                    </ul>--}}
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                             <!-- Authentication Links -->
@@ -102,7 +93,8 @@
                                             {{ __('Profile') }}
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              class="d-none">
                                             @csrf
                                         </form>
                                     </div>
