@@ -5,11 +5,11 @@
         <div class="card-img-overlay">
             <div class="container mt-5">
                 <div class="row">
-                    <form method="POST" action="{{route('annonce.search')}}" onsubmit="search(event)" id="searchForm">
-                        @csrf
+                    <form method="GET" action="/search" role="search">
+                        {{ csrf_field() }}
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="form-outline pe-1">
-                                <input type="search" class="form-control" id="words">
+                                <input type="text" class="form-control" name="q">
                             </div>
                             <button type="submit" class="btn btn-success">Rechercher</button>
                         </div>

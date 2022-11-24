@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
-Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
+//Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
 
 Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index']);
 
@@ -40,8 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'App\Http\Controllers\HomeController@editProfile')->name('user.edit-profil');
     Route::put('/profile', 'App\Http\Controllers\HomeController@updateProfile')->name('user.update-profil');
     Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['store', 'create', 'show', 'edit', 'update', 'destroy']);
-
-
+    Route::get('/search', [Controllers\AnnonceController::class, 'search']);
 });
 
 Route::group(['middleware' => 'admin'], function () {

@@ -53,14 +53,14 @@ class AnnonceController extends Controller
 
     public function search(Request $request)
     {
-        $words = $request->words;
-        $annonces = DB::table('annonces')
-            ->where('title', 'LIKE', "%$words%")
-            ->orWhere('description', 'LIKE', "%$words%")
+        $key = trim($request->get('q'));
+        $annonces = Annonce::query()
+            ->where('title', 'LIKE', "%{$key}%")
+            ->orWhere('description', 'LIKE', "%{$key}%")
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return response()->json(['success' => true, 'annonces' => $annonces]);
+        return view('annonces.search', compact('annonces'));
     }
 
     /**
