@@ -89,6 +89,10 @@
                                         catégorie</a>
                                 </li>
                             @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("categories.index") }}">Voir les
+                                    catégories</a>
+                            </li>
                         @endauth
                         @guest
                             @if (Route::has('login'))

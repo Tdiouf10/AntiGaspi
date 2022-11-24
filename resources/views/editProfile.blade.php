@@ -138,8 +138,11 @@
                                     <p class="card-text"> {{ $annonce->description }}</p>
                                     <div class="row">
                                         <a href="{{route('annonces.edit', $annonce->id)}}" class="col mx-2 btn btn-success text-white">Modifier</a>
-                                        <button class="col mx-2 btn btn-danger" >Supprimer</button>
-                                    </div>
+                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
+                                        </form>                                    </div>
                                 </div>
                             </div>
                         </div>
