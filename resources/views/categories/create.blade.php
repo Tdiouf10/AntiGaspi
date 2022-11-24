@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-    <div class="card-img-top">
-        <img src="{{ URL('storage/img/fond_create.jpeg') }}" class="image-fond" alt=""/>
+    <div class="container" style="margin-top: 150px;">
+
     </div>
+<div class="card">
     <div class="card-img-overlay">
         <div class="container w-50 card p-5 fond-couleur">
             <h1>{{ isset($category) ? 'Modifier catégorie' : 'Ajouter une catégorie' }}</h1>
             <form method="POST" action=" {{ isset($category) ?  route('categories.update', $category->id) : route('categories.store')}}">
                 @csrf
                 @if(isset($category))
-                @method('PUT')
+                    @method('PUT')
                 @endif
                 <div class="d-flex justify-content-around flex-column">
                     <div class="form-group my-2">

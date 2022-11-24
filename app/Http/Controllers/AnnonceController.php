@@ -3,19 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAnnoncesRequest;
+use App\Http\Requests\UpdateAnnonceRequest;
 use App\Models\Annonce;
 use App\Models\Category;
-use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Validator;
 
 class AnnonceController extends Controller
 {
-
     use RegistersUsers;
 
 
@@ -32,31 +28,6 @@ class AnnonceController extends Controller
 
     public function store(CreateAnnoncesRequest $request)
     {
-//
-//        if (!Auth::check()) {
-//            $request->validate([
-//                'name' => ['required'],
-//                'email' => ['required', 'email', 'unique:users'],
-//                'password' => ['required', 'confirmed'],
-//                'firstname' => ['required'],
-//                'address' => ['required'],
-//                'code_postal' => ['required'],
-//                'password_confirmation' => ['required'],
-//                'telephone' => ['required'],
-//            ]);
-//
-//            $user = User::create([
-//                'name' => $request['name'],
-//                'email' => $request['email'],
-//                'password' => Hash::make($request['password']),
-//                'firstname' => $request['firstname'],
-//                'address' => $request['address'],
-//                'code_postal' => $request['code_postal'],
-//                'telephone' => $request['telephone'],
-//            ]);
-//
-//            $this->guard()->login($user);
-//        }
 
         // enregistrer image
 
@@ -92,12 +63,63 @@ class AnnonceController extends Controller
         return response()->json(['success' => true, 'annonces' => $annonces]);
     }
 
-//    public function getAnnonces($annonce_id)
-//    {
-//        $annonces = Annonce::where('id', $annonce_id)->first();
-//        if (Auth::user() !== $annonce_id->user_id)
-//        {
-//
-//        }
-//    }
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * @param Annonce $annonce
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function edit(Annonce $annonce)
+    {
+        $categories = Category::all();
+        return view('annonces.create', compact('categories'))->with('annonce', $annonce);
+    }
+
+    /**
+     * @param UpdateAnnonceRequest $request
+     * @param Annonce $annonce
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(UpdateAnnonceRequest $request, Annonce $annonce)
+    {
+
+        $image = $request->image->store('annonces');
+
+        $annonce->title = $request->title;
+        $annonce->description = $request->description;
+        $annonce->image = $image;
+        $annonce->price = $request->price;
+        $annonce->localisation = $request->localisation;
+        $annonce->code_postal = $request->code_postal;
+        $annonce->user_id = auth()->user()->id;
+        $annonce->category_id = $request->category_id;
+
+        $annonce->save();
+
+        session()->flash('success', 'Annonce modifiée');
+
+        return redirect(route('annonces.index'));
+    }
+
+    /**
+     * @param Annonce $annonce
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy(Annonce $annonce)
+    {
+        $annonce->delete();
+
+        session()->flash('success', 'Supprimée');
+
+        return redirect(route('annonces.index'));
+    }
 }
