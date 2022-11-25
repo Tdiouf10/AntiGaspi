@@ -56,6 +56,17 @@
                 <div class="row">
                     <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ URL('storage/img/photo-profile/theo2.jpg') }}"  class="img-fluid rounded-5" alt="">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <a href="https://www.linkedin.com/in/theodore-diouf-035429225/"><i class="bi bi-linkedin text-black fs-3"></i></a>
+                            </div>
+                            <div class="col-4">
+                                <a href="https://github.com/Tdiouf10"><i class="bi bi-github text-black fs-3"></i></a>
+                            </div>
+                            <div class="col-4">
+                                <a href="mailto:theodoremdiouf98@gmail.com"><i class="bi bi-envelope text-black fs-3"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 py-4 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <ul>
@@ -91,6 +102,17 @@
                     </div>
                     <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ URL('storage/img/photo-profile/perrine.jpeg') }}"  class="img-fluid rounded-5" alt="">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <a href="https://www.linkedin.com/in/perrine-oswald-7a89431a2/"><i class="bi bi-linkedin text-black fs-3"></i></a>
+                            </div>
+                            <div class="col-4">
+                                <a href="https://github.com/perrineosw"><i class="bi bi-github text-black fs-3"></i></a>
+                            </div>
+                            <div class="col-4">
+                                <a href="mailto:oswald.perrinedu40@gmail.com"><i class="bi bi-envelope text-black fs-3"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <h3 class="text-center"><strong>Alors qu'attendez-vous pour t'entez l'expérience et rejoindre la communauté d'AntiGaspi !</strong></h3>

@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #444444;
 }
 
@@ -21,15 +21,6 @@ a {
 a:hover {
     color: #3b8af2;
     text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Roboto", sans-serif;
 }
 
 .text-justify {
@@ -121,7 +112,7 @@ h6 {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
-        transition-delay: 0 !important;
+        transition-delay: 0s !important;
     }
 }
 
@@ -136,6 +127,7 @@ h6 {
     color: #fff;
     padding: 0;
 }
+
 #topbar .contact-info i {
     font-style: normal;
     font-size: 15px;
@@ -152,7 +144,6 @@ h6 {
 
 #topbar .contact-info i a {
     line-height: 0;
-    transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -185,7 +176,7 @@ h6 {
     line-height: 1;
     font-weight: 600;
     letter-spacing: 0.8px;
-    font-family: "Poppins", sans-serif;
+
 }
 /*margin: 0;*/
 /*font-size: 48px;*/
@@ -198,7 +189,7 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     height: 86px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 #post {
@@ -210,7 +201,7 @@ h6 {
     padding: 0;
     line-height: 1;
     font-weight: 400;
-    font-family: "Poppins", sans-serif;
+
 }
 
 
@@ -225,7 +216,7 @@ h6 {
     line-height: 1;
     font-weight: 600;
     letter-spacing: 0.8px;
-    font-family: "Poppins", sans-serif;
+
 }
 
 #nav .logo a span {
@@ -297,7 +288,6 @@ h6 {
     left: 0;
     background-color: darkgreen;
     visibility: hidden;
-    width: 0px;
     transition: all 0.3s ease-in-out 0s;
 }
 
@@ -326,7 +316,7 @@ h6 {
     opacity: 0;
     visibility: hidden;
     background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
 }
 
@@ -472,7 +462,7 @@ h6 {
     opacity: 1;
     visibility: visible;
     background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
 }
 
 .navbar-mobile .dropdown ul li {
@@ -528,7 +518,7 @@ h6 {
     font-weight: 700;
     line-height: 56px;
     color: #222222;
-    font-family: "Poppins", sans-serif;
+
 }
 
 #hero h1 span {
@@ -545,7 +535,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-    font-family: "Roboto", sans-serif;
+
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
@@ -757,7 +747,7 @@ section {
 .featured-services .icon-box:hover::before {
     background: darkgreen;
     top: 0;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .featured-services .icon {
@@ -822,7 +812,7 @@ section {
 
 .about .content ul .puce {
     background: #fff;
-    box-shadow: 0px 6px 15px rgba(16, 110, 234, 0.12);
+    box-shadow: 0 6px 15px rgba(16, 110, 234, 0.12);
     font-size: 24px;
     padding: 20px;
     margin-right: 15px;
@@ -866,7 +856,7 @@ section {
     text-transform: uppercase;
     display: block;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+
     color: #222222;
 }
 
@@ -930,7 +920,7 @@ section {
 .counts .count-box p {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+
     font-size: 14px;
 }
 
@@ -971,7 +961,7 @@ section {
 }
 
 .services .icon-box .icon {
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     width: 64px;
     height: 64px;
     background: #f1f6fe;
@@ -980,7 +970,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
     transition: ease-in-out 0.3s;
 }
 
@@ -1009,7 +998,7 @@ section {
 
 .services .icon-box:hover {
     border-color: #fff;
-    box-shadow: 0px 0 25px 0 rgba(16, 110, 234, 0.1);
+    box-shadow: 0 0 25px 0 rgba(16, 110, 234, 0.1);
 }
 
 .services .icon-box:hover h4 a,
@@ -1026,8 +1015,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
     padding: 80px 0;
-    background: url("../img/testimonials-bg.jpg") no-repeat;
-    background-position: center center;
+    background: url("../img/testimonials-bg.jpg") no-repeat center center;
     background-size: cover;
     position: relative;
 }
@@ -1127,7 +1115,6 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
-    padding: 0;
     margin: 0 auto 15px auto;
     list-style: none;
     text-align: center;
@@ -1175,9 +1162,7 @@ section {
 
 .portfolio .portfolio-item .portfolio-info h4 {
     font-size: 18px;
-    color: #fff;
     font-weight: 600;
-    color: #222222;
 }
 
 .portfolio .portfolio-item .portfolio-info p {
@@ -1261,7 +1246,7 @@ section {
 
 .portfolio-details .portfolio-info {
     padding: 30px;
-    box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+    box-shadow: 0 0 30px rgba(34, 34, 34, 0.08);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -1308,7 +1293,7 @@ section {
     overflow: hidden;
     border-radius: 4px;
     background: #fff;
-    box-shadow: 0px 2px 15px rgba(16, 110, 234, 0.15);
+    box-shadow: 0 2px 15px rgba(16, 110, 234, 0.15);
 }
 
 .team .member .member-img {
@@ -1328,7 +1313,6 @@ section {
 
 .team .member .social a {
     transition: color 0.3s;
-    color: #222222;
     margin: 0 3px;
     padding-top: 7px;
     border-radius: 4px;
@@ -1336,8 +1320,6 @@ section {
     height: 36px;
     background: rgba(16, 110, 234, 0.8);
     display: inline-block;
-    transition: ease-in-out 0.3s;
-    color: #fff;
 }
 
 .team .member .social a:hover {
@@ -1385,7 +1367,7 @@ section {
     padding: 20px;
     background: #fff;
     text-align: center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -1396,7 +1378,6 @@ section {
     margin: -20px -20px 20px -20px;
     padding: 20px 15px;
     font-size: 16px;
-    font-weight: 600;
     color: #777777;
     background: #f8f8f8;
 }
@@ -1405,7 +1386,7 @@ section {
     font-size: 36px;
     color: #106eea;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+
     margin-bottom: 20px;
 }
 
@@ -1458,10 +1439,7 @@ section {
     padding: 8px 35px 10px 35px;
     border-radius: 4px;
     color: #fff;
-    transition: none;
     font-size: 14px;
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
     font-weight: 600;
     transition: 0.3s;
 }
@@ -1509,7 +1487,6 @@ section {
 .faq .faq-list .question {
     display: block;
     position: relative;
-    font-family: #106eea;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
@@ -1693,7 +1670,6 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #fff;
     padding: 0 0 30px 0;
     color: #444444;
     font-size: 14px;
@@ -1721,7 +1697,7 @@ section {
     padding: 6px 10px;
     position: relative;
     border-radius: 4px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
     text-align: left;
 }
 
@@ -1744,7 +1720,7 @@ section {
     color: #fff;
     transition: 0.3s;
     border-radius: 0 4px 4px 0;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 #footer .footer-newsletter form input[type=submit]:hover {
@@ -1776,7 +1752,6 @@ section {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family: "Roboto", sans-serif;
     color: #777777;
 }
 

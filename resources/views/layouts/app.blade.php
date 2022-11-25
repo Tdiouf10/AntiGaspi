@@ -26,37 +26,11 @@
 <div id="app">
 
 <div class="fixed-top">
-    <section id="topbar" class="d-flex align-items-center">
-        <div class="container-xl d-flex justify-content-center justify-content-md-between">
-            <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope d-flex align-items-center">
-                    <span>
-                        <a href="mailto:theodoremdiouf98@gmail.com"><u>theodoremdiouf98@gmail.com</u></a>
-                    </span>
-                </i>
-                <a href="https://www.linkedin.com/in/theodore-diouf-035429225/" class="linkedin" style="text-decoration:none">
-                    <i class="bi bi-linkedin d-flex align-items-center ms-4"></i>
-                </a>
-                <i class="bi bi-grip-vertical ms-5"></i>
-                <i class="bi bi-envelope d-flex align-items-center ms-5">
-                    <span>
-                        <a href="mailto:oswald.perrinedu40@gmail.com"><u>oswald.perrinedu40@gmail.com</u></a>
-                    </span>
-                </i>
-                <a href="https://www.linkedin.com/in/perrine-oswald-7a89431a2/" class="linkedin" style="text-decoration:none">
-                    <i class="bi bi-linkedin d-flex align-items-center ms-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
     <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-xl d-flex justify-content-between align-items-center">
             <div id="titleproject">
-                <h1 class="logo" style="padding: 10px 0 10px 0;">
-                    <a href="{{ url('/')  }}">
-                        Anti-Gaspi
-                        <span>.</span>
-                    </a>
+                <h1 class="logo">
+                    <a href="{{ url('/')  }}">Anti-Gaspi<i class="bi bi-basket fs-3 ms-3"></i></a>
                 </h1>
             </div>
             <div>
@@ -69,21 +43,21 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('annonces.create') }}">Déposer une annonce</a>
+                                <a class="nav-link active" href="{{ route('annonces.create') }}"><u>Déposer une annonce</u><i class="bi bi-plus-circle"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('annonces.index') }}">Rechercher</a>
+                                <a class="nav-link" href="{{ route('annonces.index') }}"><u>Rechercher</u><i class="bi bi-search"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link"><u>Voir les annonces</u><i class="bi bi-eye"></i></a>
                             </li>
                             @if(auth()->user()->is_admin === 1)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("categories.create") }}">Créer une catégorie</a>
+                                    <a class="nav-link" href="{{ route("categories.create") }}"><u>Créer une catégorie</u><i class="bi bi-plus-circle-fill"></i></a>
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route("categories.index") }}">Voir les catégories</a>
+                                <a class="nav-link" href="{{ route("categories.index") }}"><u>Voir les catégories</u><i class="bi bi-eye-fill"></i></a>
                             </li>
                         @endauth
                         @guest
@@ -107,10 +81,10 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        {{ __('Déconnexion') }}
+                                        <u>{{ __('Déconnexion') }}</u><i class="bi bi-box-arrow-left"></i>
                                     </a>
                                     <a class="dropdown-item" href="{{ route('user.edit-profil') }}">
-                                        {{ __('Profile') }}
+                                        <u>{{ __('Profile') }}</u><i class="bi bi-person-circle"></i>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
