@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'code_postal' => ['required', 'max:5'],
             'telephone' => ['required', 'max:10'],
-
         ]);
     }
 
@@ -77,7 +76,6 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'code_postal' => $data['code_postal'],
             'telephone' => $data['telephone'],
-
         ]);
     }
 }

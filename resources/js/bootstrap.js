@@ -2,8 +2,14 @@ import _ from 'lodash';
 window._ = _;
 
 import 'bootstrap';
-import '../sass/app.scss'
+
 import * as bootstrap from 'bootstrap'
+// added this line
+try {
+    window.bootstrap = bootstrap;
+} catch (e) {}
+
+export { bootstrap }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -21,14 +27,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
-
-let token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
 
 // import Echo from 'laravel-echo';
 
