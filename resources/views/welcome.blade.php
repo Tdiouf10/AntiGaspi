@@ -51,7 +51,7 @@
                     <h2>Qui sommes nous</h2>
                     <h3>En savoir plus <span>sur nous</span></h3>
                     <p>Deux étudiants en informatiques qui veulent sensibiliser et lutter contre le gaspillage alimentaire.</p>
-                    <h4 class="text-center mt-5"><strong>Notre objectif est d'accélérer le troc et lutter ensemble et gratuitement contre le gaspillage alimentaire !</strong></h4>
+                    <h4 class="text-center mt-5 pb-lg-0 pb-5"><strong>Notre objectif est d'accélérer le troc et lutter ensemble et gratuitement contre le gaspillage alimentaire !</strong></h4>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
@@ -61,41 +61,39 @@
                         <ul>
                             <li>
                                 <i class="puce bi bi-house"></i>
-                                <div>
+                                <div class="my-auto">
                                     <h5 class="text-justify">Trouver et partager avec ses voisins <i class="bi bi-search-heart"></i></h5>
                                     <p class="text-justify">Bien souvent nous ne connaissons pas bien nos voisins, c'est locasion de nouer des liens !</p>
                                 </div>
                             </li>
                             <li>
                                 <i class="puce bi bi-trash3"></i>
-                                <div>
+                                <div class="my-auto">
                                     <h5 class="text-justify">Ne jetez plus vos aliments <i class="bi bi-check-circle"></i></h5>
                                     <p class="text-justify">Vos ingrédients, plats approchent de la date de consommation ?<br>Proposez le, quelqu'un pourrait être intéressé !</p>
                                 </div>
                             </li>
                             <li>
                                 <i class="puce bi bi-currency-euro"></i>
-                                <div>
+                                <div class="my-auto">
                                     <h5 class="text-justify">Trouver de la nourriture gratuitement <i class="bi bi-lightbulb"></i></h5>
                                     <p class="text-justify">Les personnes dans le besoin peuvent obtenir de la nourriture gratuitement et sans contacter d'association.</p>
                                 </div>
                             </li>
                             <li>
                                 <i class="puce bi bi-globe"></i>
-                                <div>
+                                <div class="my-auto">
                                     <h5 class="text-justify">Agissons ensemble pour la planète <i class="bi bi-balloon-heart"></i></h5>
                                     <p class="text-justify">Faisons parti de ceux qui agisse à leur échelle contre le réchauffement climatique !</p>
                                 </div>
                             </li>
                         </ul>
-                        <h3 class="text-center">Alors qu'attendez-vous pour t'entez l'expérience et rejoindre la communauté d'AntiGaspi !</h3>
                     </div>
                     <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ URL('storage/img/photo-profile/perrine.jpeg') }}"  class="img-fluid rounded-5" alt="">
                     </div>
                 </div>
-
+                <h3 class="text-center"><strong>Alors qu'attendez-vous pour t'entez l'expérience et rejoindre la communauté d'AntiGaspi !</strong></h3>
             </div>
         </section>
-
 @endsection
