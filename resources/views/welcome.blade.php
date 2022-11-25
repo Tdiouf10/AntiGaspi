@@ -16,32 +16,28 @@
         <section id="featured-services" class="featured-services">
             <div class="container" data-aos="fade-up">
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-apple"></i></div>
-                            <h4 class="title"><a href="">Fruits</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bi bi-basket"></i></div>
-                            <h4 class="title"><a href="">Légumes</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <h4 class="title"><a href="" style="text-decoration:none">Fruits & Légumes</a></h4>
+                            <p class="description">Un large choix parmis les fruits et légumes sont à votre portée !</p><br>
+                            <p class="description">N'hésitez pas les partager également. <i class="bi bi-emoji-wink"></i></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-fire"></i></div>
-                            <h4 class="title"><a href="">Plats chauds</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <div class="icon"><i class="bi bi-egg"></i></div>
+                            <h4 class="title"><a href="" style="text-decoration:none">Condiments, féculents, ...</a></h4>
+                            <p class="description">Venez trouver les condiments, ingrédients qu'ils vous manquent.</p><br>
+                            <p class="description">Votre stocke peut intéresser votre voisin ! <i class="bi bi-emoji-heart-eyes"></i></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-snow2"></i></div>
-                            <h4 class="title"><a href="">Plats chauds</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <div class="icon"><i class="bi bi-fire"></i> <i class="bi bi-snow2"></i></div>
+                            <h4 class="title"><a href="" style="text-decoration:none">Plats chauds & froids</a></h4>
+                            <p class="description">Envie de manger autre chose d'originale ? d'un plat cuisiné ? Venez réserver les pats qui vous font envie !</p><br>
+                            <p class="description">Partagez vos plats, vos restes, votre passion avec des gens à côté de chez-vous ! <i class="bi bi-emoji-laughing"></i></p>
                         </div>
                     </div>
                 </div>
@@ -51,46 +47,50 @@
 
         <section id="about" class="about section-bg">
             <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
+                <div class="section-title mb-0 pb-0">
                     <h2>Qui sommes nous</h2>
                     <h3>En savoir plus <span>sur nous</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                    <p>Deux étudiants en informatiques qui veulent sensibiliser et lutter contre le gaspillage alimentaire.</p>
+                    <h4 class="text-center mt-5"><strong>Notre objectif est d'accélérer le troc et lutter ensemble et gratuitement contre le gaspillage alimentaire !</strong></h4>
                 </div>
-
                 <div class="row">
-                    <div class="col-lg-3" data-aos="fade-right" data-aos-delay="100">
+                    <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ URL('storage/img/photo-profile/theo2.jpg') }}"  class="img-fluid rounded-5" alt="">
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
-                        </p>
+                    <div class="col-lg-6 py-4 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <ul>
                             <li>
-                                <i class="bx bx-store-alt"></i>
+                                <i class="puce bi bi-house"></i>
                                 <div>
-                                    <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                                    <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                                    <h5 class="text-justify">Trouver et partager avec ses voisins <i class="bi bi-search-heart"></i></h5>
+                                    <p class="text-justify">Bien souvent nous ne connaissons pas bien nos voisins, c'est locasion de nouer des liens !</p>
                                 </div>
                             </li>
                             <li>
-                                <i class="bx bx-images"></i>
+                                <i class="puce bi bi-trash3"></i>
                                 <div>
-                                    <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                                    <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                                    <h5 class="text-justify">Ne jetez plus vos aliments <i class="bi bi-check-circle"></i></h5>
+                                    <p class="text-justify">Vos ingrédients, plats approchent de la date de consommation ?<br>Proposez le, quelqu'un pourrait être intéressé !</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="puce bi bi-currency-euro"></i>
+                                <div>
+                                    <h5 class="text-justify">Trouver de la nourriture gratuitement <i class="bi bi-lightbulb"></i></h5>
+                                    <p class="text-justify">Les personnes dans le besoin peuvent obtenir de la nourriture gratuitement et sans contacter d'association.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="puce bi bi-globe"></i>
+                                <div>
+                                    <h5 class="text-justify">Agissons ensemble pour la planète <i class="bi bi-balloon-heart"></i></h5>
+                                    <p class="text-justify">Faisons parti de ceux qui agisse à leur échelle contre le réchauffement climatique !</p>
                                 </div>
                             </li>
                         </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
+                        <h3 class="text-center">Alors qu'attendez-vous pour t'entez l'expérience et rejoindre la communauté d'AntiGaspi !</h3>
                     </div>
-                    <div class="col-lg-3" data-aos="fade-right" data-aos-delay="100">
+                    <div class="col-lg-3 my-auto" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ URL('storage/img/photo-profile/perrine.jpeg') }}"  class="img-fluid rounded-5" alt="">
                     </div>
                 </div>

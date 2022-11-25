@@ -14,13 +14,13 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/main.js', 'resources/css/style.css',
-'resources/bootstrap/css/bootstrap.css', 'resources/bootstrap/js/bootstrap.js', 'resources/bootstrap/js/bootstrap.bundle.js',
-'resources/bootstrap-icons/bootstrap-icons.css','resources/glightbox/css/plyr.css', 'resources/glightbox/css/glightbox.css',
-'resources/glightbox/js/glightbox.js', 'resources/boxicons/css/boxicons.css','resources/boxicons/css/animations.css',
-'resources/boxicons/css/transformations.css', 'resources/isotope-layout/isotope.pkgd.js', 'resources/php-email-form/validate.js',
-'resources/purecounter/purecounter_vanilla.js', 'resources/swiper/swiper-bundle.min.css', 'resources/swiper/swiper-bundle.min.js',
-'resources/waypoints/noframework.waypoints.js'
-])
+        'resources/bootstrap/css/bootstrap.css', 'resources/bootstrap/js/bootstrap.js', 'resources/bootstrap/js/bootstrap.bundle.js',
+        'resources/bootstrap-icons/bootstrap-icons.css','resources/glightbox/css/plyr.css', 'resources/glightbox/css/glightbox.css',
+        'resources/glightbox/js/glightbox.js', 'resources/boxicons/css/boxicons.css','resources/boxicons/css/animations.css',
+        'resources/boxicons/css/transformations.css', 'resources/isotope-layout/isotope.pkgd.js', 'resources/php-email-form/validate.js',
+        'resources/purecounter/purecounter_vanilla.js', 'resources/swiper/swiper-bundle.min.css', 'resources/swiper/swiper-bundle.min.js',
+        'resources/waypoints/noframework.waypoints.js'
+    ])
 </head>
 <body class="bg-white">
 <div id="app">
@@ -69,25 +69,21 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('annonces.create') }}">Déposer
-                                    une annonce</a>
+                                <a class="nav-link active" href="{{ route('annonces.create') }}">Déposer une annonce</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('annonces.index') }}">Rechercher</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('annonces.index') }}" class="nav-link">Voir les
-                                    annonces</a>
+                                <a href="{{ route('annonces.index') }}" class="nav-link">Voir les annonces</a>
                             </li>
                             @if(auth()->user()->is_admin === 1)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("categories.create") }}">Créer une
-                                        catégorie</a>
+                                    <a class="nav-link" href="{{ route("categories.create") }}">Créer une catégorie</a>
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route("categories.index") }}">Voir les
-                                    catégories</a>
+                                <a class="nav-link" href="{{ route("categories.index") }}">Voir les catégories</a>
                             </li>
                         @endauth
                         @guest
@@ -110,8 +106,7 @@
                                    v-pre>{{ Auth::user()->name }}</a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                                                             document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         {{ __('Déconnexion') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('user.edit-profil') }}">
@@ -145,15 +140,7 @@
     </main>
 </div>
 <!-- JavaScript Bundle with Popper -->
-<script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-    crossorigin="anonymous"
-></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 </body>
 </html>
