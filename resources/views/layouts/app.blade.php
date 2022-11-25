@@ -11,7 +11,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/main.js', 'resources/css/style.css',
         'resources/bootstrap/css/bootstrap.css', 'resources/bootstrap/js/bootstrap.js', 'resources/bootstrap/js/bootstrap.bundle.js',
@@ -22,7 +22,7 @@
         'resources/waypoints/noframework.waypoints.js'
     ])
 </head>
-<body class="bg-white">
+<body class="">
 <div id="app">
 
 <div class="fixed-top">
@@ -33,6 +33,7 @@
                     <a href="{{ url('/')  }}">Anti-Gaspi<i class="bi bi-basket fs-3 ms-3"></i></a>
                 </h1>
             </div>
+            <a href="{{ url('/apropos') }}" class="text-success"><u>A Propos</u><i class="bi bi-question-lg"></i></a>
             <div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -63,13 +64,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link hover-underline-animation"
+                                    <a class="nav-link"
                                        href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                 </li>
                             @endif
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link hover-underline-animation"
+                                    <a class="nav-link"
                                        href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
@@ -100,7 +101,6 @@
         </div>
     </nav>
 </div>
-    <main>
         @auth
             <div class="container" style="max-height: 100%;">
                 @if(session()->has('success'))
@@ -111,7 +111,6 @@
             </div>
         @endauth
         @yield('content')
-    </main>
 </div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

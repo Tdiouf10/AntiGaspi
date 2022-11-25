@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="d-flex align-items-center justify-content-between w-100">
-            <div class="container w-50 card p-lg-5 p-mg-2 p-1" style="margin-top: 150px;">
+            <div class="container w-50 card p-lg-5 p-mg-2 p-1" style="margin-top: 100px;">
                 <form method="POST" action=" {{ route('user.edit-profil') }}">
                     @csrf
                     @method('PUT')

@@ -9,10 +9,10 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif !important;
     color: #444444;
+    background-color: #f5fff5 !important;
 }
-
 a {
     color: #106eea;
     text-decoration: none;
@@ -25,6 +25,17 @@ a:hover {
 
 .text-justify {
     text-align: justify;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.card {
+    border: dotted darkgrey !important;
+    margin: 0;
 }
 /*--------------------------------------------------------------
 # Preloader
@@ -778,7 +789,7 @@ section {
     text-align: justify;
 }
 
-.featured-services .icon-box:hover .title a,
+.featured-services .icon-box:hover .title,
 .featured-services .icon-box:hover .description {
     color: #fff;
 }
