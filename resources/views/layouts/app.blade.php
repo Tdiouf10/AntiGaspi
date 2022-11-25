@@ -31,24 +31,20 @@
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center">
                     <span>
-                        theodoremdiouf98@gmail.com
+                        <a href="mailto:theodoremdiouf98@gmail.com"><u>theodoremdiouf98@gmail.com</u></a>
                     </span>
                 </i>
-                <i class="bi bi-phone d-flex align-items-center ms-4">
+                <a href="https://www.linkedin.com/in/theodore-diouf-035429225/" class="linkedin" style="text-decoration:none">
+                    <i class="bi bi-linkedin d-flex align-items-center ms-4"></i>
+                </a>
+                <i class="bi bi-grip-vertical ms-5"></i>
+                <i class="bi bi-envelope d-flex align-items-center ms-5">
                     <span>
-                        07 53 49 91 24
+                        <a href="mailto:oswald.perrinedu40@gmail.com"><u>oswald.perrinedu40@gmail.com</u></a>
                     </span>
                 </i>
-            </div>
-            <div class="social-links d-none d-md-flex align-items-center">
-                <a href="#" class="twitter">
-                    <i class="bi bi-twitter" style="color: white;"></i>
-                </a>
-                <a href="#" class="instagram">
-                    <i class="bi bi-instagram" style="color: white;"></i>
-                </a>
-                <a href="#" class="linkedin">
-                    <i class="bi bi-linkedin" style="color: white;"></i>
+                <a href="https://www.linkedin.com/in/perrine-oswald-7a89431a2/" class="linkedin" style="text-decoration:none">
+                    <i class="bi bi-linkedin d-flex align-items-center ms-4"></i>
                 </a>
             </div>
         </div>
