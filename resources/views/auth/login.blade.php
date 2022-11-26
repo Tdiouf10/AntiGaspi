@@ -15,11 +15,10 @@
             }
         </style>
 
-        <!-- Jumbotron -->
-        <div class="container py-4"  style="margin-top: 100px;">
-            <div class="row g-0 align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
+        <div class="row mx-2" style="margin-top: 100px;">
+            <div class="card col-lg-6 col-12 p-4">
+                <div class="row g-0 align-items-center">
+                    <div class="cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
                         <div class="card-body p-5 shadow-5 text-center">
                             <h2 class="fw-bold mb-5">Se connecter</h2>
                             <form method="POST" action="{{ route('login') }}">
@@ -54,18 +53,17 @@
                                 </button>
                                 <div class="row">
                                     @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
+                                        <a class="btn btn-link text-black" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                                     @endif
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <img src="{{asset("storage/img/connexion.jpg")}}"
-                         class="w-50 rounded-4 shadow-4"
-                         alt=""/>
+            </div>
+            <div class="col-lg-6 col-12 m-auto">
+                <div class="row w-100">
+                    <img class="image" src="{{ URL('storage/img/panier_legumes.jpeg') }}" alt="image d'un panier de légumes garni"/>
                 </div>
             </div>
         </div>

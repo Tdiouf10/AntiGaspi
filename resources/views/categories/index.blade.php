@@ -15,12 +15,18 @@
                                     </div>
                                     @if(\Illuminate\Support\Facades\Auth::user()->is_admin === 1)
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <a href="{{route('categories.edit', $category->id)}}" class="col mx-2 btn btn-success">Modifier</a>
-                                            <form method="post" action="{{route('categories.destroy',$category->id)}}">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
-                                            </form>
+                                            <div class="col-6 text-center">
+                                                <a href="{{route('categories.edit', $category->id)}}" class="btn btn-success">Modifier</a>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                <form method="post" action="{{route('categories.destroy',$category->id)}}">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                </form>
+                                            </div>
+
+
                                         </div>
                                     @endif
                                 </div>

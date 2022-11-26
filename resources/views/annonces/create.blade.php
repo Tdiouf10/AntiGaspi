@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container row mx-2" style="margin-top: 100px;">
+<div class="row mx-2" style="margin-top: 100px;">
     <div class="card col-lg-6 col-12 p-4">
         <form method="POST" action=" {{ isset($annonce) ?  route('annonces.update', $annonce->id) : route('annonces.store')}}" enctype="multipart/form-data">
             @csrf
