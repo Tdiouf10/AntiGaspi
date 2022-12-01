@@ -16,6 +16,7 @@
                                         <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                         <p class="card-text"> {{ $annonce->description }}</p>
                                         <p class="card-text"> {{ $annonce->user->name." ". $annonce->user->firstname}}</p>
+                                        <p class="card-text"> 0{{ $annonce->user->telephone }}</p>
                                     </div>
                                 </div>
                             </div>
