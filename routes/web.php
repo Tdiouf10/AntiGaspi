@@ -29,13 +29,13 @@ Route::get('/', function () {
     return view('welcome')->with('annonces', Annonce::all());
 })->name('welcome');
 
-Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index']);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('categories', 'App\Http\Controllers\CategoriesController')->only(['index']);
+    Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index', 'store', 'create', 'show', 'edit', 'update', 'destroy']);
+    Route::get('annonce/{id}', 'App\Http\Controllers\AnnonceController@detail')->name('annonce.detail');
     Route::get('/profile', 'App\Http\Controllers\HomeController@editProfile')->name('user.edit-profil');
     Route::put('/profile', 'App\Http\Controllers\HomeController@updateProfile')->name('user.update-profil');
-    Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['store', 'create', 'show', 'edit', 'update', 'destroy']);
     Route::get('/search', [Controllers\AnnonceController::class, 'search']);
 });
 

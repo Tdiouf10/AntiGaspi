@@ -20,6 +20,12 @@ class AnnonceController extends Controller
         return view('annonces.index')->with('annonces', Annonce::all());
     }
 
+    public function detail($id)
+    {
+        $annonce = Annonce::find($id);
+        return view('annonces.detail', compact('annonce'));
+    }
+
     public function create()
     {
         $categories = Category::all();
