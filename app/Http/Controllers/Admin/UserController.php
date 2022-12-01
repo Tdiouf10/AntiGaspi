@@ -55,7 +55,7 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'Utilisateur créé');
     }
 
-    public function edit(User $id)
+    public function edit($id)
     {
         $user = User::findOrFail($id);
         return view('admin.users.edit', compact('user'));

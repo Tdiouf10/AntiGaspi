@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-md-8">
+    <div class="col-md-8" style="margin-top: 100px;">
         @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
         @endif

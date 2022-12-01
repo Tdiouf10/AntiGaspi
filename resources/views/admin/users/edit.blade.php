@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-md-8">
+    <div class="col-md-8" style="margin-top: 100px;">
         @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
         @endif
@@ -16,7 +16,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h1> Ajouter un utilisateur
+                <h1> Modifier un utilisateur
                     <a href="{{route('users.index')}}" class="btn btn-primary">
                         Retour
                     </a>
