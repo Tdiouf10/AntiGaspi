@@ -23,7 +23,7 @@
                                 <div class="col py-4">
                                     <div class="card card_style h-100 shadow-sm">
                                         <img class="card-img-top" src="{{ asset($annonce->image)}}">
-                                        <div class="card-body">
+                                        <div class="card-body text-center">
                                             <h5 class="card-title">{{ $annonce->title }}</h5>
                                             <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                                             <p class="card-text text-info"> {{ $annonce->localisation }}</p>

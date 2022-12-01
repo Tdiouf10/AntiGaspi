@@ -9,7 +9,7 @@
             <h3 class="my-5 text-success"><strong>Pratiquer le troc alimentaire : que de bonnes raisons !</strong></h3>
             <div class="row h5">
                 <div class="col-lg-4 m-auto">
-                    <img class="image" src="{{ URL('storage/img/panier_legumes.jpeg') }}" alt="image d'un panier de légumes garni"/>
+                    <img class="image" src="{{ URL('storage/img/apropos/panier_legumes.jpeg') }}" alt="image d'un panier de légumes garni"/>
                 </div>
                 <div class="col-lg-8 m-auto text-justify">
                     <p>Aujourd'hui, des scandales sont connus autour du gaspillage éhonté de produits d'épicerie dans les
@@ -45,7 +45,7 @@
                         la date de péremption ? Ou certains de vos produits frais arrivent-ils à expiration ?</p>
                 </div>
                 <div class="col-lg-4 m-auto">
-                    <img class="image" src="{{ URL('storage/img/frigo.jpeg') }}" alt="image d'un frigo ouvert rempli"/>
+                    <img class="image" src="{{ URL('storage/img/apropos/frigo.jpeg') }}" alt="image d'un frigo ouvert rempli"/>
                 </div>
                 <p class="mt-2 text-justify">N'hésitez plus, remplacez vos courses ! S'il y a trop de carottes, un membre de la famille qui habite à
                     proximité peut avoir du pain supplémentaire. Ce sera un accord gagnant-gagnant.</p>
@@ -54,7 +54,7 @@
             <h3 class="my-5 text-success"><strong>Don de fruits et légumes</strong></h3>
             <div class="row h5">
                 <div class="col-lg-4 m-auto">
-                    <img class="image" src="{{ URL('storage/img/don.jpeg') }}" alt="image d'un don, d'un échange de légumes"/>
+                    <img class="image" src="{{ URL('storage/img/apropos/don.jpeg') }}" alt="image d'un don, d'un échange de légumes"/>
                 </div>
                 <div class="col-lg-8 m-auto text-justify">
                     <p>Certaines personnes aiment faire pousser des légumes et des herbes dans leurs jardins et patios. Certains
@@ -90,7 +90,7 @@
                         proximité peut avoir du pain supplémentaire. Ce sera un accord gagnant-gagnant.</p>
                 </div>
                 <div class="col-lg-4 m-auto">
-                    <img class="image" src="{{ URL('storage/img/plat.jpeg') }}" alt="image d'un plat cuisiné goûtu"/>
+                    <img class="image" src="{{ URL('storage/img/apropos/plat.jpeg') }}" alt="image d'un plat cuisiné goûtu"/>
                 </div>
             </div>
             <h5 class="mt-2 text-justify">
@@ -107,7 +107,7 @@
             <h3 class="my-5 text-success"><strong>Le don de nourriture entre particuliers, par solidarité</strong></h3>
             <div class="row h5 pb-5">
                 <div class="col-lg-4 m-auto">
-                    <img class="image" src="{{ URL('storage/img/partage.jpeg') }}" alt="image d'un repas entre amis, en famille"/>
+                    <img class="image" src="{{ URL('storage/img/apropos/partage.jpeg') }}" alt="image d'un repas entre amis, en famille"/>
                 </div>
                 <div class="col-lg-8 m-auto text-justify">
                     <p>Pour toutes les raisons ci-dessus, vous pouvez accidentellement vous retrouver avec un excès de nourriture

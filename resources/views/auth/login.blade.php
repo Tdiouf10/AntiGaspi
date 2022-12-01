@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-6 col-12 m-auto">
                 <div class="row w-100">
-                    <img class="image" src="{{ URL('storage/img/panier_legumes.jpeg') }}" alt="image d'un panier de légumes garni"/>
+                    <img class="image" src="{{ URL('storage/img/welcome_carre.jpg') }}" alt="image d'un panier de légumes garni"/>
                 </div>
             </div>
         </div>
