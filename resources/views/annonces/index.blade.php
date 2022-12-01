@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card" style="margin-top: 100px;">
+<div class="container" style="margin-top: 100px;">
+    <div class="card">
         <div class="card-img-overlay">
             <div class="container mt-5">
                 <div class="row">
@@ -20,7 +21,7 @@
                         @foreach($annonces as $annonce)
                             @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)
                                 <div class="col py-4">
-                                    <div class="card h-100 shadow-sm">
+                                    <div class="card card_style h-100 shadow-sm">
                                         <img class="card-img-top" src="{{ asset($annonce->image)}}">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $annonce->title }}</h5>
@@ -37,7 +38,9 @@
                 </div>
             </div>
         </div>
-        @endsection
+    </div>
+</div>
+@endsection
 
 @section('extra-js')
             <script>

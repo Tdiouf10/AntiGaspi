@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 100px;">
-
-    </div>
-<div class="card">
+<div class="card" style="margin-top: 100px;">
     <div class="card-img-overlay">
-        <div class="container w-50 card p-5 fond-couleur">
+        <div class="container w-50 card card_style p-5 fond-couleur">
             <h1>{{ isset($category) ? 'Modifier catégorie' : 'Ajouter une catégorie' }}</h1>
             <form method="POST" action=" {{ isset($category) ?  route('categories.update', $category->id) : route('categories.store')}}">
                 @csrf

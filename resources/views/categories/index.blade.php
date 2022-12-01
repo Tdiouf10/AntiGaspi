@@ -8,7 +8,7 @@
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         @foreach($categories as $category)
                             <div class="col">
-                                <div class="card h-100 shadow-sm p-2">
+                                <div class="card card_style h-100 shadow-sm p-2">
                                     <img class="card-img-top" src="{{URL::asset('/img/test.png')}}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title text-center">{{ $category->name }}</h5>

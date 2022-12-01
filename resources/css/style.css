@@ -34,8 +34,18 @@ a:hover {
 }
 
 .card {
-    border: dotted darkgrey !important;
+    border: none !important;
     margin: 0;
+}
+
+.card_style {
+    border: solid lightgrey 1px !important;
+    margin: 0;
+}
+
+.souligne {
+    border-bottom: darkgreen 2px solid;
+    padding-bottom: 2px;
 }
 /*--------------------------------------------------------------
 # Preloader

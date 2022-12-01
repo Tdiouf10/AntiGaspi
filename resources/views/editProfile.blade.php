@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="d-flex align-items-center justify-content-between w-100">
-            <div class="container w-50 card p-lg-5 p-mg-2 p-1" style="margin-top: 100px;">
+            <div class="container w-50 card card_style p-lg-5 p-mg-2 p-1" style="margin-top: 100px;">
                 <form method="POST" action=" {{ route('user.edit-profil') }}">
                     @csrf
                     @method('PUT')
@@ -112,7 +112,7 @@
                     </div>
                     <div class="d-flex justify-content-around align-items-center" style="margin-top: 20px;">
                         <div>
-                            <a href="{{ route('welcome') }}" class="btn btn-primary"> Retour </a>
+                            <a href="{{ route('welcome') }}" class="btn btn-danger"> Retour </a>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-success">

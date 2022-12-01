@@ -17,7 +17,7 @@
 
         <!-- Jumbotron -->
         <div class="row mx-2" style="margin-top: 100px;">
-            <div class="card col-lg-6 col-12 p-4">
+            <div class="card card_style col-lg-6 col-12 p-4">
                 <div class="row g-0 align-items-center">
                     <div class="cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
                         <div class="card-body p-5 shadow-5 text-center">
@@ -109,11 +109,6 @@
                                 <button type="submit" class="btn btn-success btn-block mb-4">
                                     S'inscrire
                                 </button>
-                                <div class="row">
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link text-black" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-                                    @endif
-                                </div>
                             </form>
                         </div>
                     </div>

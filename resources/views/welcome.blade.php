@@ -59,13 +59,13 @@
                         <img src="{{ URL('storage/img/photo-profile/theo2.jpg') }}"  class="img-fluid rounded-5" alt="">
                         <div class="row text-center">
                             <div class="col-4">
-                                <a href="https://www.linkedin.com/in/theodore-diouf-035429225/"><i class="bi bi-linkedin text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="https://www.linkedin.com/in/theodore-diouf-035429225/"><i class="bi bi-linkedin text-success fs-3 souligne"></i></a>
                             </div>
                             <div class="col-4">
-                                <a href="https://github.com/Tdiouf10"><i class="bi bi-github text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="https://github.com/Tdiouf10"><i class="bi bi-github text-success fs-3 souligne"></i></a>
                             </div>
                             <div class="col-4">
-                                <a href="mailto:theodoremdiouf98@gmail.com"><i class="bi bi-envelope text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="mailto:theodoremdiouf98@gmail.com"><i class="bi bi-envelope text-success fs-3 souligne"></i></a>
                             </div>
                         </div>
                     </div>
@@ -105,13 +105,13 @@
                         <img src="{{ URL('storage/img/photo-profile/perrine.jpeg') }}"  class="img-fluid rounded-5" alt="">
                         <div class="row text-center">
                             <div class="col-4">
-                                <a href="https://www.linkedin.com/in/perrine-oswald-7a89431a2/"><i class="bi bi-linkedin text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="https://www.linkedin.com/in/perrine-oswald-7a89431a2/"><i class="bi bi-linkedin text-success fs-3 souligne"></i></a>
                             </div>
                             <div class="col-4">
-                                <a href="https://github.com/perrineosw"><i class="bi bi-github text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="https://github.com/perrineosw"><i class="bi bi-github text-success fs-3 souligne"></i></a>
                             </div>
                             <div class="col-4">
-                                <a href="mailto:oswald.perrinedu40@gmail.com"><i class="bi bi-envelope text-success fs-3"><i class="bi bi-link-45deg"></i></i></a>
+                                <a href="mailto:oswald.perrinedu40@gmail.com"><i class="bi bi-envelope text-success fs-3 souligne"></i></a>
                             </div>
                         </div>
                     </div>
