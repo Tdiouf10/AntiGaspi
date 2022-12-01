@@ -137,12 +137,35 @@
                                     <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                     <p class="card-text"> {{ $annonce->description }}</p>
                                     <div class="row">
-                                        <a href="{{route('annonces.edit', $annonce->id)}}" class="col mx-2 btn btn-success text-white">Modifier</a>
+                                        <a href="{{route('annonces.edit', $annonce->id)}}"
+                                           class="col mx-2 btn btn-success text-white">Modifier</a>
                                         <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
-                                        </form>                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @elseif(auth()->user()->is_admin === 1)
+                        <div class="col py-4">
+                            <div class="card h-100 shadow-sm">
+                                <img class="card-img-top" src="{{ asset($annonce->image)}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $annonce->title }}</h5>
+                                    <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
+                                    <p class="card-text text-info"> {{ $annonce->localisation }}</p>
+                                    <p class="card-text"> {{ $annonce->description }}</p>
+                                    <div class="row">
+                                        <a href="{{route('annonces.edit', $annonce->id)}}"
+                                           class="col mx-2 btn btn-success text-white">Modifier</a>
+                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

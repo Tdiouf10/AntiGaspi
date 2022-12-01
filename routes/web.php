@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Annonce;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
+use App\Models\Annonce;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +29,6 @@ Route::get('/', function () {
     return view('welcome')->with('annonces', Annonce::all());
 })->name('welcome');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-
-//Route::post('/search', 'App\Http\Controllers\AnnonceController@search')->name('annonce.search');
-
 Route::resource('annonces', 'App\Http\Controllers\AnnonceController')->only(['index']);
 
 Route::group(['middleware' => 'auth'], function () {
@@ -45,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'admin'], function () {
     Route::resource('categories', 'App\Http\Controllers\CategoriesController')->only(['create', 'store', 'show', 'edit', 'update', 'destroy']);
+    Route::resource('users', 'App\Http\Controllers\Admin\UserController')->only(['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']);
 });
 
 Auth::routes();
