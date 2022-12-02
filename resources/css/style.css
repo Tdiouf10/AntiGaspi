@@ -43,6 +43,14 @@ a:hover {
     margin: 0;
 }
 
+.center {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 .souligne {
     border-bottom: darkgreen 2px solid;
     padding-bottom: 2px;
