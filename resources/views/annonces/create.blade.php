@@ -57,7 +57,10 @@
                                     </div>
                                     <div class="form-group my-2">
                                         <label for="title">Image</label>
-                                        <input type="file" class="form-control" id="image" name="image">
+                                        <input type="file" class="form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image" name="image" value="{{ isset($annonce) ?$annonce->image : '' }}">
+                                        @if($errors->has('image'))
+                                            <span class="invalid-feedback"> {{ $errors->first('image') }}</span>
+                                        @endif
                                     </div>
                                     <div class="d-flex justify-content-between my-2">
                                         <div class="row">

@@ -98,11 +98,12 @@ class AnnonceController extends Controller
     public function update(UpdateAnnonceRequest $request, Annonce $annonce)
     {
 
-        $image = $request->image->store('annonces');
+        $newImage = time() . '-' . $request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImage);
 
         $annonce->title = $request->title;
         $annonce->description = $request->description;
-        $annonce->image = $image;
+        $annonce->image = $newImage;
         $annonce->price = $request->price;
         $annonce->localisation = $request->localisation;
         $annonce->code_postal = $request->code_postal;

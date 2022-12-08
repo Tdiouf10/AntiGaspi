@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Annonce;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -26,11 +27,11 @@ class UpdateAnnonceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', Rule::unique('annonces')->ignore(Auth::user()->id)],
+            'title' => ['required', Rule::unique('annonces', 'title')->ignore($this->annonce)],
             'description' => ['required'],
             'localisation' => ['required'],
             'code_postal' => ['required', 'integer'],
-            'image' => ['required', 'image'],
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:5048'],
             'price' => ['required'],
             'category_id' => ['required', 'exists:App\Models\Category,id']
         ];

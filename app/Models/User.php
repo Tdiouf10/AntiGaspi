@@ -51,4 +51,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Annonce::class);
     }
+
+    /**
+     * @return void
+     */
+    public static function boot ()
+    {
+
+        parent::boot();
+
+        static::deleted(function ($user) {
+            foreach ($user->annonces as $annonce) {
+                $annonce->delete();
+            }
+        });
+    }
 }
