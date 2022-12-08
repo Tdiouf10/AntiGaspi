@@ -9,7 +9,7 @@
                     <h5 class="card-title mt-5">{{ $annonce->title  }}</h5>
                     <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                     <p class="card-text text-info"> {{ $annonce->localisation }}</p>
-                    <img class="card-img-top my-3" src="{{ asset($annonce->image)}}">
+                    <img class="card-img-top my-3" src="{{ asset('images/' .$annonce->image)}}">
                     <p class="card-text"> {{ $annonce->description }}</p>
                 </div>
                 <div class="col">

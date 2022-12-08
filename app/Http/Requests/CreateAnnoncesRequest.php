@@ -28,7 +28,7 @@ class CreateAnnoncesRequest extends FormRequest
             'description' => ['required'],
             'localisation' => ['required'],
             'code_postal' => ['required', 'integer'],
-            'image' => ['required', 'image'],
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:5048'],
             'price' => ['required'],
             'category_id' => ['required', 'exists:App\Models\Category,id']
         ];

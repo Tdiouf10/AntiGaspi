@@ -34,17 +34,17 @@ class AnnonceController extends Controller
 
     public function store(CreateAnnoncesRequest $request)
     {
-
         // enregistrer image
 
-        $image = $request->image->store('annonces');
+        $newImage = time() . '-' . $request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImage);
 
         // Creer une annonce
 
         Annonce::create([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $image,
+            'image' => $newImage,
             'price' => $request->price,
             'localisation' => $request->localisation,
             'code_postal' => $request->code_postal,
