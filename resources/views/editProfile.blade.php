@@ -131,7 +131,7 @@
                 </form>
             </div>
         </div>
-        <h2 class="mt-5">Annonces créées</h2>
+        <h2 class="mt-5">Vos annonces</h2>
         <div class="row row-cols-1 row-cols-md-4 g-4">
             @foreach(\App\Models\Annonce::all() as $annonce)
                 @if(\Illuminate\Support\Facades\Auth::id() === $annonce->user_id)
@@ -163,9 +163,10 @@
             @endforeach
         </div>
         @if(auth()->user()->is_admin === 1)
-            <h2 class="mt-5">Annonces que vous avez crées</h2>
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                @foreach(\App\Models\Annonce::all() as $annonce)
+        <h2 class="mt-5">Annonces des autres utilisateurs</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach(\App\Models\Annonce::all() as $annonce)
+                @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)
                     <div class="col py-4">
                         <div class="card card_style h-100 shadow-sm">
                             <img class="card-img-top" src="{{ asset('images/' .$annonce->image)}}">
@@ -190,8 +191,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                @endif
+            @endforeach
+        </div>
         @endif
     </div>
 @endsection
