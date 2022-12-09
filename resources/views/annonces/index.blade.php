@@ -27,7 +27,7 @@
                                             <h5 class="card-title">{{ $annonce->title }}</h5>
                                             <p class="card-text"> {{ $annonce->description }}</p>
                                             <p class="card-text text-info"> {{ $annonce->localisation }}</p>
-                                            <a href="" class="btn btn-success">Voir l'annonce</a>
+                                            <a href="{{ route('annonce.detail', $annonce->id) }}" class="btn btn-success">Voir l'annonce</a>
                                             <small class="card-footer text-muted mt-2"> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                                         </div>
                                     </div>

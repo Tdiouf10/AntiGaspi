@@ -137,7 +137,7 @@
                 @if(\Illuminate\Support\Facades\Auth::id() === $annonce->user_id)
                     <div class="col py-4">
                         <div class="card card_style h-100 shadow-sm">
-                            <img class="card-img-top" src="{{ asset('images/' .$annonce->image)}}">
+                            <img class="card-img-top h-75" src="{{ asset('images/' .$annonce->image)}}">
                             <div class="card-body text-center d-flex justify-content-between flex-column">
                                 <h5 class="card-title">{{ $annonce->title }}</h5>
                                 <p class="card-text"> {{ $annonce->description }}</p>
@@ -169,7 +169,7 @@
                 @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)
                     <div class="col py-4">
                         <div class="card card_style h-100 shadow-sm">
-                            <img class="card-img-top" src="{{ asset('images/' .$annonce->image)}}">
+                            <img class="card-img-top  h-75" src="{{ asset('images/' .$annonce->image)}}">
                             <div class="card-body text-center d-flex justify-content-between flex-column">
                                 <h5 class="card-title">{{ $annonce->title }}</h5>
                                 <p class="card-text"> {{ $annonce->description }}</p>
