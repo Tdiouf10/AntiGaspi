@@ -22,13 +22,13 @@
                             @if(\Illuminate\Support\Facades\Auth::id() !== $annonce->user_id)
                                 <div class="col py-4">
                                     <div class="card card_style h-100 shadow-sm">
-                                        <img class="card-img-top" src="{{  asset('images/' .$annonce->image)}}">
+                                        <img class="card-img-top h-50" src="{{  asset('images/' .$annonce->image)}}">
                                         <div class="card-body text-center d-flex justify-content-between flex-column">
                                             <h5 class="card-title">{{ $annonce->title }}</h5>
-                                            <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
-                                            <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                             <p class="card-text"> {{ $annonce->description }}</p>
-                                            <a href="{{ route('annonce.detail', $annonce->id) }}" class="btn btn-success">Voir l'annonce</a>
+                                            <p class="card-text text-info"> {{ $annonce->localisation }}</p>
+                                            <a href="" class="btn btn-success">Voir l'annonce</a>
+                                            <small class="card-footer text-muted mt-2"> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                                         </div>
                                     </div>
                                 </div>

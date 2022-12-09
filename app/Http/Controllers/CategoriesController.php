@@ -31,8 +31,13 @@ class CategoriesController extends Controller
      */
     public function store(CreateCategoryRequest $request)
     {
+
+        $newImage = time() . '-' . $request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImage);
+
         Category::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'image' => $newImage,
         ]);
 
         session()->flash('success', 'Catégorie ajoutée');
@@ -43,7 +48,7 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +72,13 @@ class CategoriesController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
+        $newImage = time() . '-' . $request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImage);
+
+
         $category->name = $request->name;
+        $category->image = $newImage;
+
 
         $category->save();
 

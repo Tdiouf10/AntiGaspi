@@ -63,6 +63,8 @@ class AnnonceController extends Controller
         $annonces = Annonce::query()
             ->where('title', 'LIKE', "%{$key}%")
             ->orWhere('description', 'LIKE', "%{$key}%")
+            ->orWhere('localisation', 'LIKE', "%{$key}%")
+            ->orWhere('code_postal', 'LIKE', "%{$key}%")
             ->orderBy('created_at', 'DESC')
             ->get();
 

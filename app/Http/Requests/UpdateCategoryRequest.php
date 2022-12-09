@@ -27,6 +27,8 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => ['required', Rule::unique('categories', 'name')->ignore($this->category)],
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:5048'],
+
         ];
     }
 }

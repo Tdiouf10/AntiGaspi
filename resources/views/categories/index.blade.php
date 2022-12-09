@@ -8,10 +8,10 @@
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         @foreach($categories as $category)
                             <div class="col">
-                                <div class="card card_style h-100 shadow-sm p-2">
-                                    <img class="card-img-top" src="{{URL::asset('/storage/img/carotte.png')}}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">{{ $category->name }}</h5>
+                                <div class="card card_style h-100 shadow-sm">
+                                    <img class="card-img-top h-50" src="{{  asset('images/' .$category->image) }}" alt="Card image cap">
+                                    <div class="card-body text-center d-flex justify-content-between flex-column">
+                                        <h5 class="card-title">{{ $category->name }}</h5>
                                     </div>
                                     @if(\Illuminate\Support\Facades\Auth::user()->is_admin === 1)
                                         <div class="d-flex justify-content-between align-items-center">
@@ -25,8 +25,6 @@
                                                     <button type="submit" class="btn btn-danger">Supprimer</button>
                                                 </form>
                                             </div>
-
-
                                         </div>
                                     @endif
                                 </div>

@@ -140,22 +140,22 @@
                             <img class="card-img-top" src="{{ asset('images/' .$annonce->image)}}">
                             <div class="card-body text-center d-flex justify-content-between flex-column">
                                 <h5 class="card-title">{{ $annonce->title }}</h5>
-                                <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
-                                <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                 <p class="card-text"> {{ $annonce->description }}</p>
+                                <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                 <div class="row">
-                                    <div class="col-6">
-                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
-                                        </form>
-                                    </div>
-                                    <div class="col-6">
+                                    <div>
                                         <a href="{{route('annonces.edit', $annonce->id)}}"
                                            class="col mx-2 btn btn-success text-white">Modifier</a>
                                     </div>
+                                    <div class="mt-3">
+                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
+                                            @method('delete')
+                                            @csrf
+                                            <button onclick="return confirm('Etes vous sûres de vouloir supprimer cet annonce')"  type="submit" class="btn btn-danger col mx-2">Supprimer</button>
+                                        </form>
+                                    </div>
                                 </div>
+                                <small class="card-footer text-muted mt-2"> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                             </div>
                         </div>
                     </div>
@@ -172,22 +172,22 @@
                             <img class="card-img-top" src="{{ asset('images/' .$annonce->image)}}">
                             <div class="card-body text-center d-flex justify-content-between flex-column">
                                 <h5 class="card-title">{{ $annonce->title }}</h5>
-                                <small> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
-                                <p class="card-text text-info"> {{ $annonce->localisation }}</p>
                                 <p class="card-text"> {{ $annonce->description }}</p>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger col mx-2">Supprimer</button>
-                                        </form>
-                                    </div>
+                                <p class="card-text text-info"> {{ $annonce->localisation }}</p>
+                                <div class="row d-flex">
                                     <div class="col-6">
                                         <a href="{{route('annonces.edit', $annonce->id)}}"
                                            class="col mx-2 btn btn-success text-white">Modifier</a>
                                     </div>
+                                    <div class="col-6">
+                                        <form method="post" action="{{route('annonces.destroy',$annonce->id)}}">
+                                            @method('delete')
+                                            @csrf
+                                            <button onclick="return confirm('Etes vous sûres de vouloir supprimer cet annonce')" type="submit" class="btn btn-danger col mx-2">Supprimer</button>
+                                        </form>
+                                    </div>
                                 </div>
+                                <small class="card-footer text-muted mt-2"> {{ Carbon\Carbon::parse($annonce->created_at)->diffForHumans() }}</small>
                             </div>
                         </div>
                     </div>
